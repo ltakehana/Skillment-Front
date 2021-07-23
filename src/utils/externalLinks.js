@@ -1,10 +1,10 @@
 const externalLinks={
-    userPic:"http://localhost:5050/users_profile_pic/",
-    companyLogo:"http://localhost:5050/company_logo/",
-    coinIcon:"http://localhost:5050/points_icon/",
-    badgeIcon:"http://localhost:5050/badges_icon/",
-    questIcon:"http://localhost:5050/quests_icon/",
-    api:"http://localhost:5050/"
+    userPic:"http://api.skillment.com.br/users_profile_pic/",
+    companyLogo:"http://api.skillment.com.br/company_logo/",
+    coinIcon:"http://api.skillment.com.br/points_icon/",
+    badgeIcon:"http://api.skillment.com.br/badges_icon/",
+    questIcon:"http://api.skillment.com.br/quests_icon/",
+    api:"http://api.skillment.com.br/"
 };
 
 export default externalLinks;
