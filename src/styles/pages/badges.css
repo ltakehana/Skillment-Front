@@ -1,0 +1,172 @@
+
+
+.badgesCarouselItem{
+    background-color: snow;
+    width: 22vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2vh;
+    margin-bottom: 2vh;
+    padding:2%;
+    border-radius: 1vh;
+    cursor: pointer;
+    box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+.badgesCarouselItemTitle{
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+    font-size: 2vh;
+}
+.badgesCarouselItemIcon{
+    height: 9vh;
+    font-size: 9vh;
+}
+
+.createBadgeModal{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+.createBadgeModalText{
+    font-family: Roboto;
+    color: #363636;
+    margin:2vh;
+}
+
+.createBadgeModalName{
+    width: 37vw;
+    margin-bottom:2vh;
+    margin-left: auto;
+    margin-right: auto;
+    border:none;
+    padding:1vh;
+    border-radius:0.5vh;
+    -webkit-box-shadow:inset 0 0 10px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+}
+
+.createBadgeModalDescription{
+    width: 37vw;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+    border:none;
+    border-radius:0.5vh;
+    padding:1vh;
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+
+}
+
+.createBadgeModalButton{
+    padding: 1vh;
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);
+    text-align: center;
+    border:none;
+    margin:2vh;
+    margin-right: 1vw;
+    margin-left: auto;
+    font-weight: bold;
+    color:white;
+    font-size: 2vh;
+}
+
+.createBadgeModalButton{
+    padding: 1vh;
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);
+    text-align: center;
+    border:none;
+    margin:2vh;
+    margin-right: 1vw;
+    font-weight: bold;
+    color:white;
+    font-size: 2vh;
+}
+
+.createBadgeModalButton .material-icons{
+    margin: auto;
+    color:white;
+    font-size: min(3vw, 3vh);
+}
+
+.createBadgeModalButtons{
+    display: flex;
+    flex-direction: row;
+}
+
+.badgeDetailModal{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+.badgeDetailModalHeader{
+    display: flex;
+    font-family: Roboto;
+    color: #363636;
+    flex-direction: row;
+    width: 36vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+}
+
+.badgeDetailModalDescription{
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto;
+    color: #363636;
+    width: 36vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+    font-size: 2vh;
+    max-height: 20vw;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+.badgeDetailModalTitle{
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto;
+    color: #363636;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 4vh;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.badgeDetailModalIcon{
+    display: flex;
+    flex-direction: row;
+    color: #363636;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 7vh;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.badgesCarouselItemIcon:hover{
+    opacity: 0.3;
+    background-color: rgb(189, 189, 189);
+    border-radius: 1vh;
+}

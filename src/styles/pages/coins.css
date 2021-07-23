@@ -1,0 +1,215 @@
+.coinFrame{
+    background-color: snow;
+    width: 80vw;
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom: auto;
+    border-radius: 1vh;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+.coinHeader{
+    display: flex;
+    flex-direction: column;
+}
+
+.coinsBack{
+    text-align: initial;
+    margin-left: 3%;
+    font-size: 3rem;
+    margin-right: auto;
+    cursor: pointer;
+    color:#424242;
+}
+
+.coinContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.coinText{
+    font-family: Roboto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    color:#363636;
+}
+.coinText h1{
+    font-size: 6rem;
+    margin: 0px;
+    font-weight: normal;
+}
+.coinText label{
+    margin: 0px;
+    font-size: 3rem;
+}
+.coinIcon{
+    height: 5rem;
+    margin-left: 1rem;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.coinBody{
+    font-family: Roboto;
+    font-size: 1.6rem;
+    color:#363636;
+    width: 94%;
+    height: calc(70vh - 6rem - 3rem - 5vh - 1.6rem - 5rem);
+    margin-right: auto;
+    margin-left: auto;
+    overflow: auto;
+}
+
+.coinStatementTitle{
+    margin-top: 5vh;
+    font-family: Roboto;
+    font-size: 1.6rem;
+    color:#363636;
+    margin-left: 3%;
+    margin-right: auto;
+}
+
+.coinTable{
+    width: 100%;
+    margin-top: 4rem;
+    text-align: initial;
+    font-family: Roboto;
+    color:#363636;
+    margin-right: auto;
+    margin-left: auto;
+}
+.coinTable th{
+    text-align: initial;
+    font-size: 1.5rem;
+}
+.coinTable td{
+    text-align: initial;
+    font-size: 1rem;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.coinTable tr{
+    padding-top:1vh;
+    padding-bottom:1vh;
+}
+
+.createCoinModal{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+.createCoinModalText{
+    font-family: Roboto;
+    color: #363636;
+    margin:2vh;
+}
+
+.createCoinModalName{
+    width: 37vw;
+    margin-bottom:2vh;
+    margin-left: auto;
+    margin-right: auto;
+    border:none;
+    padding:1vh;
+    border-radius:0.5vh;
+    -webkit-box-shadow:inset 0 0 10px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+}
+
+.createCoinModalDescription{
+    width: 37vw;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+    border:none;
+    border-radius:0.5vh;
+    padding:1vh;
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+
+}
+
+.createCoinModalButton{
+    padding: 1vh;
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);
+    text-align: center;
+    border:none;
+    margin:2vh;
+    margin-right: 1vw;
+    margin-left: auto;
+    font-weight: bold;
+    color:white;
+    font-size: 2vh;
+}
+.createCoinModalButton{
+    padding: 1vh;
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);
+    text-align: center;
+    border:none;
+    margin:2vh;
+    margin-right: 1vw;
+    font-weight: bold;
+    color:white;
+    font-size: 2vh;
+}
+
+.createCoinModalButton .material-icons{
+    margin: auto;
+    color:white;
+    font-size: min(3vw, 3vh);
+}
+
+.createCoinModalButtons{
+    display: flex;
+    flex-direction: row;
+}
+
+.marketCarouselItemOptions{
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.marketCarouselItemOption{
+    margin-right: 0px;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 3vw;
+}
+
+.marketCarouselItemOption:hover{
+    background-color: rgb(189, 189, 189);
+}
+
+.marketCarouselItemIcon:hover{
+    opacity: 0.8;
+}

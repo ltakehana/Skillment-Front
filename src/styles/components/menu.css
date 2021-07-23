@@ -1,0 +1,51 @@
+.Menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    width:  min(12vw, 12vh);
+}
+
+.MenuIcon{
+    width:  min(6vw, 6vh);
+    height: min(6vw, 6vh);
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);;
+    margin-bottom:1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.MenuIcon .material-icons{
+    font-size: min(3vw, 3vh);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.SelectedMenuIcon{
+    width:  min(8vw, 8vh);
+    height: min(8vw, 8vh);
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius:  max(10vw, 10vh);
+    margin-bottom:1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.SelectedMenuIcon .material-icons{
+    font-size: min(4vw, 4vh);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}

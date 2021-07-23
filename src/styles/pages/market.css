@@ -1,0 +1,53 @@
+.marketCarouselItem{
+    background-color: snow;
+    width: 22vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2vh;
+    margin-bottom: 2vh;
+    padding:2%;
+    border-radius: 1vh;
+    cursor: pointer;
+    box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+.marketCarouselItemTitle{
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+    font-size: 2vh;
+}
+.marketCarouselItemIcon{
+    height: 10vh;
+    margin:auto;
+}
+
+.marketCarouselItemPrice{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+    font-size: 1.4vh;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.marketCarouselItemPrice label{
+    margin-left: 0.5vw;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.8vh;
+    
+}
+
+.marketCarouselItemPrice .material-icons{
+    margin-left: auto;
+    margin-right: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.8vh;
+}

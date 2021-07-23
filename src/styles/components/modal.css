@@ -1,0 +1,90 @@
+.modal{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal-container{
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+}
+
+#close-modal-container{
+    display: flex;
+    align-self: flex-end;
+    margin: 0.4rem;
+}
+
+#close-modal-button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+
+.confirmationContent{
+    width: 30vw;
+    padding:2vw;
+    font-family: Roboto;
+    font-size: 2vh;
+}
+
+.giveModal{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.giveModalHeader{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55vw;
+}
+
+.giveModalHeader .material-icons{
+    font-size: 12vh;
+}
+.giveModalHeader img{
+    height: 12vh;
+}
+
+.giveModalTitle{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 90%;
+    border:none;
+    text-align: initial;
+    font-family: Roboto;
+    color: #363636;
+    word-wrap: break-word;
+}
+
+.giveModalInput{
+    margin:0.5vh;
+    padding:1vh;
+    border-radius:0.5vh;
+    resize: none;
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+}

@@ -1,0 +1,106 @@
+
+.Navbar{
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    width: 100vw;
+    margin:0px;
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+}
+
+.NavbarLogo{
+    max-height: 7vh;
+    max-width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.NavbarUserIcon{
+    height: min(6vw, 6vh);
+    color: white;
+}
+
+.NavbarUserName{
+    font-size: min(5vw, 2vh);
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 20vw;
+    max-height: 8vh;
+    font-family: roboto;
+}
+
+.NavbarUser{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.NavbarUser:hover .NavbarUserDropdown{
+    display: flex;
+}
+
+.NavbarUserDropdown{
+    background-color: snow;
+    box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    top:7vh;
+    padding:1vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1vh;
+    font-family: Roboto;
+    position: absolute;
+    z-index: 5;
+    display: none;
+} 
+
+
+.NavbarUserDropdownItem:hover{
+    cursor: pointer;
+    background-color: rgb(189, 189, 189);
+}
+
+.NavbarUserDropdownIcon{
+    padding: 0px;
+    margin:0px;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.NavbarUserDropdownText{
+    padding: 0px;
+    margin:0.5rem;
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.NavbarUserDropdownItem{
+    display: flex;
+    color: #161616;
+    flex-direction: row;
+    text-align: center;
+    display: flex;
+    width: 8vw;
+    align-items: center;
+    padding:0.5rem;
+    border-radius: 3vw;
+}

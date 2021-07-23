@@ -1,0 +1,151 @@
+.rankingFrame{
+    background-color: snow;
+    width: 50vw;
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 0px;
+    margin-top:auto;
+    margin-bottom: auto;
+    border-radius: 1vh;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+.rankingTitle{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: initial;
+    font-family: Roboto;
+    color: #363636;
+}
+
+.rankingTitle h1{
+    font-size: 3rem;
+    margin-left: 0px;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: normal;
+}
+
+.rankingFilter{
+    margin-right: 0px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor:rgb(224, 213, 213);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.rankingList{
+    width: 90%;
+    max-height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    overflow: auto;
+
+}
+
+.rankingTable{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: initial;
+    font-family: Roboto;
+    overflow: auto;
+    color: #363636;
+}
+
+.rankingIcon{
+    font-size: 3rem;
+}
+
+.rankingSymbolColumn {
+    text-align: center;
+}
+.rankingSymbol{
+    cursor: pointer;
+    color: #E2D222;
+    font-size: 3rem;
+}
+
+.rankingPosition{
+    background-color: #D9D9D9;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.rankingPlayer{
+    background-color: snow;
+    width: 28vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom: auto;
+    border-radius: 4vh;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+.rankingArrow{
+    margin-left: 0px;
+    margin-right: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor:rgb(224, 213, 213);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.rankingPlayerIcon{
+    font-size: 20vh;
+    color: #363636;
+}
+
+.rankingPlayerName{
+    font-size: 4vh;
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+}
+
+.rankingPlayerPosition{
+    background-color: #D9D9D9;
+    font-size: 3vh;
+    font-family: Roboto;
+    color: #363636;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border-radius: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+}
+
+.rankingPlayerPoints{
+    font-size: 2vh;
+    font-family: Roboto;
+    color: #363636;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+}

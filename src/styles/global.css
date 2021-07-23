@@ -1,0 +1,39 @@
+.mainFrame{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    padding:0px;
+    margin:0px
+}
+
+.mainBody{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 0;
+    padding:0px;
+    margin:0px
+}
+
+.mainContent{
+    width: calc(100vw - min(12vw, 12vh));
+    height: 92vh;
+    margin:0px;
+    margin-top: auto;
+    margin-bottom: 0px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    flex-direction: row;
+    padding:0px;
+}
+

@@ -1,0 +1,124 @@
+.profileModal{
+    width: 80vw;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileContent{
+    display: flex;
+    flex-direction: row;
+    margin:2%;
+    margin-left: 0px;
+}
+
+.profileDiv{
+    width: 37.5vw;
+    align-items: center;
+}
+#profileImageInput{
+    visibility:hidden;
+}
+.profileInput{
+    display: block;
+	font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.7em;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    border:none;
+    width: 70%;
+    padding:1vh;
+    border-radius:0.5vh;
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+}
+
+.profileBioLabel{
+    display: block;
+    font-family: Roboto;
+	font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.7em;
+    margin:0.9em;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: 9vw;
+    border:none;
+    padding:1vh;
+}
+
+.profileInputLabel{
+    display: block;
+    font-family: Roboto;
+	font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.7em;
+    margin:0.9em;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 0px;
+    margin-left: auto;
+    border:none;
+    padding:1vh;
+}
+
+#profileBirthDate{
+    display: block;
+	font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.7em;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    border:none;
+    width: 70%;
+    padding:1vh;
+    border-radius:0.5vh;
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+}
+
+#profileImage{
+    display: block;
+    margin:0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em;
+    height: 25em;
+    border-radius:25em;
+    object-fit: cover;
+}
+
+
+
+.profileBio{
+    width: 60vw;
+    height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+    border:none;
+    border-radius:0.5vh;
+    padding:1vh;
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+         box-shadow:inset 0 0 3px #000;
+}
+
+.profileInputDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+}

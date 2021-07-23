@@ -1,0 +1,27 @@
+.plusButton{
+    position: fixed;
+    right:min(6vw, 6vh);
+    bottom:min(6vw, 6vh);
+    width:  min(6vw, 6vh);
+    height: min(6vw, 6vh);
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);
+    text-align: center;
+    border:none;
+}
+
+.plusButton .material-icons{
+    margin: auto;
+    color:white;
+    font-size: min(4vw, 4vh);
+}
+
+
+.plusButton:hover{
+    opacity: 0.9;
+}

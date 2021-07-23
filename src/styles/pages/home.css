@@ -1,0 +1,206 @@
+.homePlayer{
+    background-color: snow;
+    position:fixed;
+    border-radius: 1vh;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    width: 28vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.homePlayerIcon{
+    height: 20vh;
+    width: auto;
+    margin: auto;
+    color: #363636;
+}
+
+.homePlayerName{
+    font-size: 4vh;
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+}
+
+.homePlayerCompany{
+    background-color: #D9D9D9;
+    font-size: 3vh;
+    font-family: Roboto;
+    color: #363636;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border-radius: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+}
+
+.homePlayerPoints{
+    font-size: 2vh;
+    font-family: Roboto;
+    color: #363636;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+}
+
+.homeFeed{
+    width: 55vw;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5vh;
+}
+
+.homePost{
+    display: flex;
+    flex-direction: column;
+    background-color: snow;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1vh;
+    margin-bottom: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+}
+
+.homePostText{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    border:none;
+    text-align: initial;
+    font-family: Roboto;
+    font-size: 2vh;
+    color: #363636;
+    word-wrap: break-word;
+}
+
+
+.homePostHeader{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.homePostIcon{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 5vh;
+    color: #363636;
+    margin-right: 1vw;
+}
+
+.homePostName{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3vh;
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+    max-width: 100%;
+}
+
+.homePlayerColumn{
+    width: 28vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.homePostLike{
+    color: #363636;
+    margin-left: 5%;
+    margin-right: auto;
+    margin-top:1vh;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    text-align: initial;
+    cursor: pointer;
+    background-color: #D9D9D9;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 2rem;
+}
+
+.homePostLike .material-icons{
+    font-size: 2vh;
+    margin-right: 0.5vw;
+    margin-left: auto;
+    margin-top:auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+.homePostLike label{
+    font-family: Roboto;
+    font-size: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+.postModal{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+.postModalText{
+    font-family: Roboto;
+    color: #363636;
+    margin:2vh;
+}
+
+.postModalInput{
+    width: 37vw;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+
+}
+
+.postModalButton{
+    width:  min(6vw, 6vh);
+    height: min(6vw, 6vh);
+    display: flex;
+    vertical-align: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: max(10vw, 10vh);
+    text-align: center;
+    border:none;
+    margin:2vh;
+    margin-right: 1vw;
+    margin-left: auto;
+}
+
+.postModalButton .material-icons{
+    margin: auto;
+    color:white;
+    font-size: min(3vw, 3vh);
+}
