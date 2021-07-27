@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <section className="panel">
+      <section className="panel" style={{background:"white"}}>
         <img className="logo" src={Logo} alt="Logo" />
       </section>
       <section className="login-form-container">

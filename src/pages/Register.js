@@ -79,7 +79,7 @@ const Register = (props) => {
       </button>
     </div>
   </section>
-      <section className="panel">
+      <section className="panel" style={{background:"white"}}>
         <img className="logo" src={Logo} alt="Logo" />
       </section>
       
