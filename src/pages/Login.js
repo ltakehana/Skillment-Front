@@ -33,11 +33,11 @@ const Login = () => {
       <section className="login-form-container">
         <h1 className="login-title">Inicie sua sessão</h1>
         <div className="login-form">
-          <h3 className="login-email">Usuário</h3>
+          <h3 className="login-email">Email</h3>
           <input
             type="text"
             className="login-input"
-            placeholder="username"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

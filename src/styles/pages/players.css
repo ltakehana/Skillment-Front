@@ -69,6 +69,8 @@
 .playerIcon{
     font-size: 3rem;
     height: 3rem;
+    width: 3rem;
+    object-fit: cover;
 }
 
 .playerOptionsColumn {

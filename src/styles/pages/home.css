@@ -14,7 +14,8 @@
 
 .homePlayerIcon{
     height: 20vh;
-    width: auto;
+    width: 20vh;
+    object-fit:cover;
     margin: auto;
     color: #363636;
 }
@@ -101,6 +102,8 @@
     margin-top: auto;
     margin-bottom: auto;
     height: 5vh;
+    width: 5vh;
+    object-fit:cover;
     color: #363636;
     margin-right: 1vw;
 }

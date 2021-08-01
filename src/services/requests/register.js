@@ -10,7 +10,7 @@ const register = async (body) => {
     return response.data;
   } catch (error) {
     alert("Cadastro não concluído concluído");
-    return (error.response.data);
+    return (error);
   }
 };
 

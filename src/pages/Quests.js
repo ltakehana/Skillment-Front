@@ -310,9 +310,9 @@ function Quests() {
                                     <Progress progress={selectedQuest.progress}></Progress>
                                 </div>
                          </div>
-                         <div className="questDetailModalDescription">
+                         <pre className="questDetailModalDescription">
                             {selectedQuest.description}
-                         </div>
+                         </pre>
                      </div>
                   </Modal>
               )}

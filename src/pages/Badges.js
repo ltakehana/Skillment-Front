@@ -252,9 +252,9 @@ function Badges() {
                                     {selectedBadge.name}
                                 </h1>
                          </div>
-                         <div className="badgeDetailModalDescription">
+                         <pre className="badgeDetailModalDescription">
                             {selectedBadge.description}
-                         </div>
+                         </pre>
                      </div>
                   </Modal>
               )}
