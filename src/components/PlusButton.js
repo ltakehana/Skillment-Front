@@ -9,6 +9,8 @@ function PlusButton({onClickFunction}) {
 
 
     const [backgroundColor,setBackgroundColor] = useState("#4A4A4A");
+    const [highlightColor,setHighlightColor] = useState("#4A4A4A");
+
 
 
     useEffect(async ()=>{
@@ -21,12 +23,13 @@ function PlusButton({onClickFunction}) {
         if(!companyInfo){
             companyInfo = await getCompany(userToken);
         }
-        setBackgroundColor(companyInfo.first_color)
+        setBackgroundColor(companyInfo.first_color);
+        setHighlightColor(companyInfo.third_color);
     },[]);
 
     return(
-        <button className="plusButton"style={{backgroundColor:backgroundColor}} onClick={onClickFunction}>
-            <span className="material-icons">
+        <button className="plusButton" style={{backgroundColor:backgroundColor}} onClick={onClickFunction}>
+            <span className="material-icons" style={{color:highlightColor}}>
                 add
             </span>
         </button>

@@ -8,6 +8,7 @@ import Profile from './Profile';
 import Company from './Company';
 import defaultImage from "../assets/accountCircleNegative.svg";
 import externalLinks from '../utils/externalLinks';
+import ChangeCompany from './ChangeCompany';
 
 function Navbar() {
     const history = useHistory();
@@ -15,9 +16,12 @@ function Navbar() {
     const [userPicture,setUserPicture] = useState("");
     const [admin ,setAdmin] = useState(false);
     const [userName,setUserName] = useState("Usuario");
+    const [userCompanies,setUserCompanies] = useState([]);
     const [profileVisible,setProfileVisible] = useState(false);
     const [companyVisible,setCompanyVisible] = useState(false);
 	const [companyPicture, setCompanyPicture] = useState(skillabLogo);
+	const [changeCompanyVisible, setChangeCompanyVisible] = useState(false);
+    const [highlightColor,setHighlightColor] = useState("#4A4A4A");
 
     const handleLogout = () =>{
         sessionStorage.clear();
@@ -36,6 +40,7 @@ function Navbar() {
         }
         setUserPicture(userInfo.picture);
         setUserName(userInfo.name);
+        setUserCompanies(userInfo.companies);
         let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
         if(!companyInfo){
             companyInfo = await getCompany(userToken);
@@ -57,10 +62,18 @@ function Navbar() {
             <img className="NavbarLogo" src={companyPicture} />
             <div className="NavbarUser">
                 <img style={{borderRadius:"40vw"}} src={(userPicture=="")?(defaultImage):(externalLinks.userPic+userPicture)} className="NavbarUserIcon"/>
-                <label className="NavbarUserName">
+                <label className="NavbarUserName" >
                     {userName}
                 </label>
                 <div className="NavbarUserDropdown">
+                    {(userCompanies.length>1)&&(
+                        <div className="NavbarUserDropdownItem" onClick={()=>{setChangeCompanyVisible(true)}}>
+                            <span className="material-icons NavbarUserDropdownIcon">
+                                swap_horiz
+                            </span>
+                            <span className="NavbarUserDropdownText">Trocar empresa</span>
+                        </div>
+                    )}
                     {(admin)&&(
                         <div className="NavbarUserDropdownItem" onClick={()=>{setCompanyVisible(true)}}>
                             <span className="material-icons NavbarUserDropdownIcon">
@@ -85,6 +98,7 @@ function Navbar() {
             </div>
             {(profileVisible)&&(<Profile onClose={()=>{setProfileVisible(false)}}/>)}
             {(companyVisible)&&(<Company onClose={()=>{setCompanyVisible(false)}}/>)}
+            {(changeCompanyVisible)&&(<ChangeCompany onClose={()=>{setChangeCompanyVisible(false)}}/>)}
         </div>
     );
 

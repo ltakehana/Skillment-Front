@@ -7,7 +7,7 @@ import Progress from '../components/Progress';
 import getQuests from '../services/requests/getQuests';
 import getUser from '../services/requests/getUser';
 import getCompany from '../services/requests/getCompany';
-import { useHistory } from 'react-router';
+import {useHistory } from 'react-router';
 import Modal from '../components/Modal';
 import PlusButton from '../components/PlusButton';
 import getCompanyUsers from '../services/requests/getCompanyUsers';
@@ -17,7 +17,8 @@ import defaultImage from "../assets/questIcon.svg";
 import playerIcon from "../assets/accountCircle.svg";
 import fileToBase64 from '../utils/fileToBase64';
 import externalLinks from '../utils/externalLinks';
-import progressQuest from "../services/requests/progressQuest"
+import progressQuest from "../services/requests/progressQuest";
+import Switch from '../components/Switch';
 
 function Quests() {
 
@@ -29,6 +30,7 @@ function Quests() {
     const [selectedQuest,setSelectedQuest] = useState({})
     const [highlightColor,setHighlightColor] = useState("#C7C7C7");
     const [createQuestModal ,setCreateQuestModal] = useState(false);
+    const [createQuestModalPlayers ,setCreateQuestModalPlayers] = useState(false);
     const [giveQuestModal ,setGiveQuestModal] = useState(false);
     const [questDescriptionInput, setQuestDescriptionInput]=useState("");
     const [questNameInput,setQuestNameInput]=useState("");
@@ -38,6 +40,7 @@ function Quests() {
     const [progressField,setProgressField] = useState(0);
     const [confirmationText,setConfirmationText] = useState("");
     const [confirmationFunction,setConfirmationFunction] = useState(()=>{});
+    const [questType, setQuestType]=useState(0);
     
 
 	const [fieldImage, setFieldImage] = useState(defaultImage);
@@ -48,6 +51,15 @@ function Quests() {
 		setFieldImage(imageBase64);
 	};
 
+    const handleCreateQuestPlayers = (check)=>{
+        setCreateQuestModalPlayers(check)
+        if(check){
+            setQuestType(1);
+        }
+        else{
+            setQuestType(0);
+        }
+    }
 
     const handleProgressQuest = async()=>{
         const userToken=sessionStorage.getItem("userToken");
@@ -74,13 +86,15 @@ function Quests() {
         if(!userToken){
             await history.push("/login")
         }
-        const newQuest = {
+        let newQuest = {
             name:questNameInput,
-            type:0,
+            type:questType,
             reward_type:0,
             description:questDescriptionInput,
-            players:playersIdList,
-            icon:fieldImage
+            players:playersIdList
+        }
+        if(fieldImage){
+            newQuest.icon=fieldImage
         }
         await createQuest(userToken,newQuest);
         setCreateQuestModal(false);
@@ -255,7 +269,12 @@ function Quests() {
                                 <textarea  onChange={(e) => setQuestDescriptionInput(e.target.value)} placeholder="Descrição da missão" className="createQuestModalDescription"/>
                             </div>
                         </div>
-                        <div className="playersQuestList">
+                        <div className="createQuestSwitch">
+                            <span>Deseja restringir a missão para pessoas específicas?</span>
+                            <Switch onChecked={(check)=>handleCreateQuestPlayers(check)}></Switch>
+                        </div>
+                        {(createQuestModalPlayers)&&
+                        (<div className="playersQuestList">
                             <table className="playersTable">
                                 {playersList.map((player,index)=>(
                                     <tr>
@@ -280,7 +299,7 @@ function Quests() {
                                     </tr>
                                 ))}
                             </table>
-                        </div>
+                        </div>)}
                         <div className="createQuestModalButtons">
                             <button onClick={()=>{setCreateQuestModal(false)}} style={{backgroundColor:highlightColor,marginLeft:"auto"}} className="createQuestModalButton">
                                 Cancelar

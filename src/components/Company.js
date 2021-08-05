@@ -54,20 +54,23 @@ function Company({onClose}) {
 		if (secondColor) second_color = secondColor;
 		if (thirdColor) third_color = thirdColor;
 
-		if (fieldImage) {
-			company_image = fieldImage;
-		}
-
 		let body = {
 			name: name,
 			description: description,
-			logo: company_image,
             first_color: first_color,
             second_color: second_color,
             third_color: third_color
 		};
 
+
+		if (fieldImage) {
+			body.logo = fieldImage;
+            
+		}
+
         await updateCompany(token,companyId,body)
+
+        sessionStorage.removeItem("companyInfo");
 
 		window.location.reload();
 	};
@@ -109,7 +112,7 @@ function Company({onClose}) {
                 </div>
             </div>
             <div className="createQuestModalButtons">
-                <button onClose={onClose} style={{backgroundColor:highlightColor,marginLeft:"auto"}} className="createQuestModalButton">
+                <button onClick={onClose} style={{backgroundColor:highlightColor,marginLeft:"auto"}} className="createQuestModalButton">
                     Cancelar
                 </button>
                 <button onClick={handleCompanyUpdate} style={{backgroundColor:highlightColor}} c className="createQuestModalButton">

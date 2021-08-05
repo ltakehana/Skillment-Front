@@ -190,3 +190,20 @@
     background-color: rgb(189, 189, 189);
     opacity: 0.7;
 }
+
+.createQuestSwitch{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-top:2vh;
+    margin-bottom: 2vh;
+}
+
+.createQuestSwitch span{
+    font-family: Roboto;
+    color: #363636;
+    font-weight: 590;
+    font-size: 2vh;
+    margin-bottom: auto;
+    margin-top: auto;
+}

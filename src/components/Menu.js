@@ -64,7 +64,7 @@ function Menu({selectedMenu}) {
             companyInfo = await getCompany(userToken);
         }
         setSelectedBackgroundColor(companyInfo.first_color);
-
+        setSelectedColor(companyInfo.third_color);
     },[]);
 
 
