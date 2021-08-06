@@ -9,6 +9,7 @@ import Company from './Company';
 import defaultImage from "../assets/accountCircleNegative.svg";
 import externalLinks from '../utils/externalLinks';
 import ChangeCompany from './ChangeCompany';
+import ChangePassword from './ChangePassword';
 
 function Navbar() {
     const history = useHistory();
@@ -21,6 +22,7 @@ function Navbar() {
     const [companyVisible,setCompanyVisible] = useState(false);
 	const [companyPicture, setCompanyPicture] = useState(skillabLogo);
 	const [changeCompanyVisible, setChangeCompanyVisible] = useState(false);
+	const [changePasswordVisible, setChangePasswordVisible] = useState(false);
     const [highlightColor,setHighlightColor] = useState("#4A4A4A");
 
     const handleLogout = () =>{
@@ -96,9 +98,10 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-            {(profileVisible)&&(<Profile onClose={()=>{setProfileVisible(false)}}/>)}
+            {(profileVisible)&&(<Profile onChangePassword={()=>{setChangePasswordVisible(true)}} onClose={()=>{setProfileVisible(false)}}/>)}
             {(companyVisible)&&(<Company onClose={()=>{setCompanyVisible(false)}}/>)}
             {(changeCompanyVisible)&&(<ChangeCompany onClose={()=>{setChangeCompanyVisible(false)}}/>)}
+            {(changePasswordVisible)&&(<ChangePassword onClose={()=>{setChangePasswordVisible(false)}}></ChangePassword>)}
         </div>
     );
 

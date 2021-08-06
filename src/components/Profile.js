@@ -9,7 +9,7 @@ import updateProfile from '../services/requests/updateProfile';
 import externalLinks from '../utils/externalLinks';
 
 
-function Profile({onClose}) {
+function Profile({onChangePassword,onClose}) {
 
 	const [userData, setUserData] = useState();
 	const token = sessionStorage.getItem("userToken");
@@ -163,6 +163,9 @@ function Profile({onClose}) {
                         </label>
                     </div>
                 </div>
+                <button onClick={()=>{onClose();onChangePassword()}} style={{backgroundColor:highlightColor,marginRight:"auto",marginLeft:"9vw"}} className="createQuestModalButton">
+                    Mudar senha
+                </button>
                 <label className="profileBioLabel">Biografia:</label>
                 <textarea onChange={(e)=>{setFieldBio(e.target.value)}} className={"profileBio"}>{fieldBio}</textarea>
                 <div className="createQuestModalButtons">
