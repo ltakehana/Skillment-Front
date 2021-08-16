@@ -137,6 +137,7 @@ function Players() {
                                         <td className="playerEmailColumn">
                                             <label className="playerEmail">{player.email}</label>
                                         </td>
+                                        {(admin)&&(
                                         <td className="playerOptionsColumn">
                                             <div className="homePostOptions">
                                                 <span className="material-icons" onMouseOver={(e)=>{
@@ -166,7 +167,7 @@ function Players() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </td>)}
                                     </tr>
                                 ))}
                             </table>
