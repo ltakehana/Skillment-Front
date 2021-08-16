@@ -138,13 +138,13 @@ function Badges() {
                             <div className="badgesCarouselItem" style={{opacity:(badge.complete || admin)?("100%"):("80%")}}>
                                 {(admin)&&(
                                     <div className="marketCarouselItemOptions">
-                                        {/* <span style={{marginLeft:"auto"}} className="material-icons marketCarouselItemOption">
+                                        <span style={{marginLeft:"auto"}} className="material-icons marketCarouselItemOption">
                                             delete
                                         </span>
                                         <span className="material-icons marketCarouselItemOption">
                                             edit
-                                        </span> */}
-                                        <span style={{marginLeft:"auto"}} onClick={()=>{setSelectedBadge(badge);setGiveBadgeModal(true)}} className="material-icons marketCarouselItemOption">
+                                        </span>
+                                        <span onClick={()=>{setSelectedBadge(badge);setGiveBadgeModal(true)}} className="material-icons marketCarouselItemOption">
                                             add_circle
                                         </span>
                                     </div>

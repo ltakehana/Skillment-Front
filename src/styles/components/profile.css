@@ -91,8 +91,8 @@
     margin:0px;
     margin-left: auto;
     margin-right: auto;
-    width: 25em;
-    height: 25em;
+    width: 30vh;
+    height: 30vh;
     border-radius:25em;
     object-fit: cover;
 }

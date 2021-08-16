@@ -45,7 +45,7 @@ function ChangePassword({onClose}) {
                 };
         
                 const updateResponse = await updateProfile(response.token,body);
-                if(updateResponse.message){
+                if(updateResponse){
                     sessionStorage.clear();
                     alert("Senha redefinida com sucesso! Logue novamente!");
                     window.location.reload();

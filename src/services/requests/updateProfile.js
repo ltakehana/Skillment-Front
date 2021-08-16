@@ -9,7 +9,7 @@ const updateProfile = async (token,body) => {
           Authorization: `${token}`,
         }
       });
-      return response.data;
+      return response.data.message;
   } catch (error) {
     return ([]);
   }

@@ -13,13 +13,13 @@ const Login = () => {
   const handleSignIn = async () => {
     try {
       const response = await auth(email, password);
-      if (response.result !== null) {
+      if (response.token) {
         history.push('/');
       } else {
-        alert(response.mensagem);
-        return (0);
+        alert("Email ou senha incorretos, por favor tente novamente!");
       }
     } catch (error) {
+      alert("Email ou senha incorretos, por favor tente novamente!");
        console.error(error);
     }
   };
@@ -51,6 +51,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
+          <h4 className="login-password" style={{cursor:"pointer"}} onClick={()=>{history.push("/reset_password")}}>Esqueceu sua senha?</h4>
           <button
             className="login-button"
             type="button"

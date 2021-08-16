@@ -26,6 +26,8 @@ function Players() {
     const [playerEmailInput,setPlayerEmailInput]=useState("");
     const [playerOfficeInput,setPlayerOfficeInput]=useState("");
     const [privilegesField,setPrivilegesField]=useState("0000000000");
+    const [mouseXPosition,setMouseXPosition]=useState(0.0);
+    const [mouseYPosition,setMouseYPosition]=useState(0.0);
 
 
     const [admin,setAdmin] = useState(false);
@@ -135,16 +137,36 @@ function Players() {
                                         <td className="playerEmailColumn">
                                             <label className="playerEmail">{player.email}</label>
                                         </td>
-                                        {/* <td className="playerInfoColumn">
-                                            <span title="Clique para mais informações" className="material-icons playerInfo">
-                                                info
-                                            </span>
-                                        </td>
                                         <td className="playerOptionsColumn">
-                                            <span className="material-icons playerOptions">
-                                                more_vert
-                                            </span>
-                                        </td> */}
+                                            <div className="homePostOptions">
+                                                <span className="material-icons" onMouseOver={(e)=>{
+                                                    setMouseXPosition(MouseEvent.pageX);
+                                                    setMouseYPosition(e.clientY);
+                                                }}>
+                                                    more_vert
+                                                </span>
+                                                <div className="homePostDropdown" style={{top:mouseYPosition,left:mouseXPosition}}>
+                                                    <div className="NavbarUserDropdownItem">
+                                                        <span className="material-icons NavbarUserDropdownIcon">
+                                                            info
+                                                        </span>
+                                                        <span className="NavbarUserDropdownText">Informações</span>
+                                                    </div>
+                                                    <div className="NavbarUserDropdownItem">
+                                                        <span className="material-icons NavbarUserDropdownIcon">
+                                                            edit
+                                                        </span>
+                                                        <span className="NavbarUserDropdownText">Editar usuário</span>
+                                                    </div>
+                                                    <div className="NavbarUserDropdownItem">
+                                                        <span className="material-icons NavbarUserDropdownIcon">
+                                                            block
+                                                        </span>
+                                                        <span className="NavbarUserDropdownText">Desligar usuário</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 ))}
                             </table>

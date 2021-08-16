@@ -50,6 +50,7 @@ const LoginYA21 = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <h4 className="login-password" style={{cursor:"pointer"}} onClick={()=>{history.push("/reset_password")}}>Esqueceu sua senha?</h4>
 
           <button
             className="login-button"

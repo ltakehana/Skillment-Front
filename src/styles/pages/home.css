@@ -207,3 +207,26 @@
     color:white;
     font-size: min(3vw, 3vh);
 }
+
+.homePostOptions{
+    margin-right: 0px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.homePostDropdown{
+    display: none;
+    position: absolute;
+    background-color: snow;
+    padding: 1vh;
+    margin-top: -2vh;
+    margin-left: 1vw;
+    border-radius: 1vh;
+    box-shadow: 7px 7px 22px 0px rgba(0, 0, 0, 0.4);
+}
+
+.homePostOptions:hover .homePostDropdown{
+    display: block;
+}

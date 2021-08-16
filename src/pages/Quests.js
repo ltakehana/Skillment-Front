@@ -166,13 +166,13 @@ function Quests() {
                             <div className="questsCarouselItem">
                                 {(admin)&&(
                                     <div className="marketCarouselItemOptions">
-                                        {/* <span style={{marginLeft:"auto"}} className="material-icons marketCarouselItemOption">
+                                        <span style={{marginLeft:"auto"}} className="material-icons marketCarouselItemOption">
                                             delete
                                         </span>
-                                        <span className="material-icons marketCarouselItemOption">
+                                        <span className="material-icons marketCarouselItemOption" >
                                             edit
-                                        </span> */}
-                                        <span style={{marginLeft:"auto"}} onClick={()=>{setSelectedQuest(quest);setGiveQuestModal(true)}} className="material-icons marketCarouselItemOption">
+                                        </span> 
+                                        <span onClick={()=>{setSelectedQuest(quest);setGiveQuestModal(true)}} className="material-icons marketCarouselItemOption">
                                             add_circle
                                         </span>
                                     </div>

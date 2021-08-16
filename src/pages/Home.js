@@ -31,6 +31,8 @@ function Home() {
     const [player, setRankingPlayer] = useState({
         name:"Usuario do app",
         company:"skillab",
+        id:0,
+        admin:false,
         office: "Consultor"
     });
 
@@ -74,7 +76,9 @@ function Home() {
         setRankingPlayer({
             "name": userInfo.name,
             "company":companyInfo.name,
-            "office":companyInfo.office
+            "office":companyInfo.office,
+            "id":userInfo.id,
+            "admin":userInfo.admin
         });
 
         const posts = await getPosts(userToken);
@@ -116,6 +120,20 @@ function Home() {
                                 <div className="homePostHeader">
                                     <img style={{borderRadius:"40vw"}} src={(post.picture=="")?(defaultImage):(externalLinks.userPic+post.picture)} className="homePostIcon"/>
                                     <h1 className="homePostName">{post.name}</h1>
+                                    {(post.author_id == player.id || player.admin)&&
+                                    (<div className="homePostOptions">
+                                        <span className="material-icons">
+                                            more_vert
+                                        </span>
+                                        <div className="homePostDropdown">
+                                            <div className="NavbarUserDropdownItem">
+                                                <span className="material-icons NavbarUserDropdownIcon">
+                                                    block
+                                                </span>
+                                                <span className="NavbarUserDropdownText">Excluir postagem</span>
+                                            </div>
+                                        </div>
+                                    </div>)}
                                 </div>
                                 <div  className="homePostText">{post.message}</div>
                                 <div className="homePostLike" onClick={()=>{

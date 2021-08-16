@@ -12,6 +12,8 @@ import Login from "../pages/Login";
 import LoginYA21 from "../pages/LoginYA21";
 import LoginEmbraer from "../pages/LoginEmbraer";
 import Register from "../pages/Register";
+import ResetPassword from "../pages/ResetPassword";
+import NewPassword from "../pages/NewPassword";
 
 
 const AppRoutes = () => (
@@ -28,6 +30,8 @@ const AppRoutes = () => (
 		<Route component={LoginYA21} path="/login/YA21" exact />
 		<Route component={LoginEmbraer} path="/login/embraer" exact />
 		<Route component={Register} path="/register/:registerToken" />
+		<Route component={ResetPassword} path="/reset_password" exact/>
+		<Route component={NewPassword} path="/reset_password/:userToken" />
 	</Switch>
 );
 export default AppRoutes;
