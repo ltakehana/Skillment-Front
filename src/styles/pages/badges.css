@@ -29,10 +29,23 @@
     flex-direction: column;
     width: 40vw;
 }
+
+.createBadgeModalTextIcon{
+    margin-left: 1rem;
+}
+
 .createBadgeModalText{
     font-family: Roboto;
     color: #363636;
     margin:2vh;
+}
+
+.createBadgeModalSubText {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #363636;
+    margin: 2vh;
 }
 
 .createBadgeModalName{
