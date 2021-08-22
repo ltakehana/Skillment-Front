@@ -46,7 +46,7 @@ function Coin(props) {
                             <div className="coinContent">
                                     <div className="coinText">
                                         <h1>
-                                            <img src={(coins.icon!="")?(externalLinks.coinIcon+coins.icon):(defaultImage)} className="coinIcon"/>
+                                            <img src={(coins.icon!=="")?(externalLinks.coinIcon+coins.icon):(defaultImage)} className="coinIcon"/>
                                             {"  "+coins.quantity} 
                                             {"  "+coins.name}
                                         </h1>

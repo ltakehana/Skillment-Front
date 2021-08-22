@@ -17,7 +17,7 @@ const ResetPassword = (props) => {
         email:email
     }
     const response = await RequestResetPassword(body);
-    if(response=="Email has been sended"){
+    if(response==="Email has been sended"){
         alert("Solicitação realizada com sucesso!\nConfira seu email.")
         history.push("/login");
     }

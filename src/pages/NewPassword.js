@@ -15,7 +15,7 @@ const NewPassword = (props) => {
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
   const handleSignUp = async () => {
-    if(password==passwordConfirmation){
+    if(password===passwordConfirmation){
       const body={
         password:password
       }

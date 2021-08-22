@@ -65,7 +65,7 @@ function ChangeCompany({onClose}) {
                     {companies.map((company, index) => (
                         <Carousel.Item key={index}>
                             <div style={{margin:"3vw"}} onClick={()=>{handleChangeCompanyUpdate(company.id)}}>
-                                <img src={(company.logo!="" && company.logo!=null)?(externalLinks.companyLogo+company.logo):(defaultImage)}  className="badgesCarouselItemIcon" style={{height:"10vh",cursor:"pointer"}}/>
+                                <img src={(company.logo!=="" && company.logo!==null)?(externalLinks.companyLogo+company.logo):(defaultImage)}  className="badgesCarouselItemIcon" style={{height:"10vh",cursor:"pointer"}}/>
                                 <h2 className="badgesCarouselItemTitle">
                                     {company.name}
                                 </h2>

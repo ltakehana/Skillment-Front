@@ -89,7 +89,7 @@ function Home() {
         const userToken=sessionStorage.getItem("userToken");
         let updatePosts = []
         posts.map((post,index)=>{
-            if(post.id==postId)
+            if(post.id===postId)
                 post.like=true;
             updatePosts.push(post);
         });
@@ -101,7 +101,7 @@ function Home() {
         const userToken=sessionStorage.getItem("userToken");
         let updatePosts = []
         posts.map((post,index)=>{
-            if(post.id==postId)
+            if(post.id===postId)
                 post.like=false;
             updatePosts.push(post);
         });
@@ -118,9 +118,9 @@ function Home() {
                         {
                             posts.map((post,index) => (<div className="homePost">
                                 <div className="homePostHeader">
-                                    <img style={{borderRadius:"40vw"}} src={(post.picture=="")?(defaultImage):(externalLinks.userPic+post.picture)} className="homePostIcon"/>
+                                    <img style={{borderRadius:"40vw"}} src={(post.picture==="")?(defaultImage):(externalLinks.userPic+post.picture)} className="homePostIcon"/>
                                     <h1 className="homePostName">{post.name}</h1>
-                                    {(post.author_id == player.id || player.admin)&&
+                                    {(post.author_id === player.id || player.admin)&&
                                     (<div className="homePostOptions">
                                         <span className="material-icons">
                                             more_vert
@@ -152,7 +152,7 @@ function Home() {
                     </div>
                     <div className="homePlayerColumn">
                         <div className="homePlayer">
-                            <img style={{borderRadius:"40vw"}} src={(userPicture=="")?(defaultImage):(externalLinks.userPic+userPicture)} className="homePlayerIcon"/>
+                            <img style={{borderRadius:"40vw"}} src={(userPicture==="")?(defaultImage):(externalLinks.userPic+userPicture)} className="homePlayerIcon"/>
                             <h1 className="homePlayerName">{player.name}</h1>
                             <label className="homePlayerCompany">{player.company}</label>
                             <label className="homePlayerPoints">{player.office}</label>

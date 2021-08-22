@@ -39,7 +39,7 @@ function ChangePassword({onClose}) {
     const handleProfileUpdate = async () => {
         const response = await Auth(email, fieldPassword);
         if (response.token) {
-            if(fieldNewPassword!="" && fieldNewPassword==fieldConfirmPassword){
+            if(fieldNewPassword!=="" && fieldNewPassword===fieldConfirmPassword){
                 let body = {
                     password: fieldNewPassword
                 };

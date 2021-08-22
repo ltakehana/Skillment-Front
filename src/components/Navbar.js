@@ -47,11 +47,11 @@ function Navbar() {
         if(!companyInfo){
             companyInfo = await getCompany(userToken);
         }
-        if(companyInfo.logo!=""){
+        if(companyInfo.logo!==""){
             setCompanyPicture(externalLinks.companyLogo+companyInfo.logo);
         }
         if(companyInfo.privilleges){
-            if(userInfo.admin || companyInfo.privilleges[0]=='1')
+            if(userInfo.admin || companyInfo.privilleges[0]==='1')
                 setAdmin(true);
             else
                 setAdmin(false);
@@ -63,7 +63,7 @@ function Navbar() {
         <div className="Navbar" style={{backgroundColor:navbarColor}}>
             <img className="NavbarLogo" src={companyPicture} />
             <div className="NavbarUser">
-                <img style={{borderRadius:"40vw"}} src={(userPicture=="")?(defaultImage):(externalLinks.userPic+userPicture)} className="NavbarUserIcon"/>
+                <img style={{borderRadius:"40vw"}} src={(userPicture==="")?(defaultImage):(externalLinks.userPic+userPicture)} className="NavbarUserIcon"/>
                 <label className="NavbarUserName" >
                     {userName}
                 </label>

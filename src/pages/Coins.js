@@ -103,7 +103,7 @@ function Coins() {
 
 
         if(companyInfo.privilleges){
-            if(userInfo.admin || companyInfo.privilleges[2]=='1')
+            if(userInfo.admin || companyInfo.privilleges[2]==='1')
                 setAdmin(true);
             else
                 setAdmin(false);
@@ -148,7 +148,7 @@ function Coins() {
                                             </span>
                                         </div>
                                     )}
-                                    <img src={(coin.icon!="")?(externalLinks.coinIcon+coin.icon):(defaultImage)} className="marketCarouselItemIcon" onClick={()=>{
+                                    <img src={(coin.icon!=="")?(externalLinks.coinIcon+coin.icon):(defaultImage)} className="marketCarouselItemIcon" onClick={()=>{
                                         history.push("/coins/"+coin.id)
                                     }}/>
                                     
@@ -176,7 +176,7 @@ function Coins() {
                <Modal onClose={()=>{setGiveCoinsModal(false)}}>
                    <div className="giveModal">
                        <div className="giveModalHeader">                                
-                            <img src={(selectedCoin.icon!="")?(externalLinks.coinIcon+selectedCoin.icon):(defaultImage)}/>
+                            <img src={(selectedCoin.icon!=="")?(externalLinks.coinIcon+selectedCoin.icon):(defaultImage)}/>
                             <div className="giveModalTitle">
                                 <h1>Dar moeda - {selectedCoin.name}</h1>
                                 <div>

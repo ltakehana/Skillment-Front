@@ -17,7 +17,7 @@ const Register = (props) => {
   const [birthDate, setBirthDate] = useState('');
 
   const handleSignUp = async () => {
-    if(password==passwordConfirmation){
+    if(password===passwordConfirmation){
       const body={
         registerToken:registerToken,
         name:name,

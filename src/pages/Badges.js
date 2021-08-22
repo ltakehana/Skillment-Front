@@ -102,7 +102,7 @@ function Badges() {
         setHighlightColor(companyInfo.first_color);
 
         if(companyInfo.privilleges){
-            if(userInfo.admin || companyInfo.privilleges[3]=='1')
+            if(userInfo.admin || companyInfo.privilleges[3]==='1')
                 setAdmin(true);
             else
                 setAdmin(false);
@@ -149,7 +149,7 @@ function Badges() {
                                         </span>
                                     </div>
                                 )}
-                                <img src={(badge.icon!="")?(externalLinks.badgeIcon+badge.icon):(defaultImage)} onClick={()=>{setSelectedBadge(badge);setBadgeDetailsVisible(true)}} style={{opacity:(badge.complete && admin)?("100%"):("30%")}} className="badgesCarouselItemIcon"/>
+                                <img src={(badge.icon!=="")?(externalLinks.badgeIcon+badge.icon):(defaultImage)} onClick={()=>{setSelectedBadge(badge);setBadgeDetailsVisible(true)}} style={{opacity:(badge.complete && admin)?("100%"):("30%")}} className="badgesCarouselItemIcon"/>
                                 <h2 className="badgesCarouselItemTitle">
                                     {badge.name}
                                 </h2>
@@ -198,7 +198,7 @@ function Badges() {
                 <Modal onClose={()=>{setGiveBadgeModal(false)}}>
                     <div className="giveModal">
                         <div className="giveModalHeader">                                
-                            <img src={(selectedBadge.icon!="")?(externalLinks.badgeIcon+selectedBadge.icon):(defaultImage)} />
+                            <img src={(selectedBadge.icon!=="")?(externalLinks.badgeIcon+selectedBadge.icon):(defaultImage)} />
                             <h1 className="giveModalTitle">
                                 Atribuir insígnia - {selectedBadge.name}
                             </h1>
@@ -247,7 +247,7 @@ function Badges() {
                   <Modal onClose={()=>{setBadgeDetailsVisible(false)}}>
                      <div className="badgeDetailModal">
                          <div className="badgeDetailModalHeader">                              
-                                <img src={(selectedBadge.icon!="")?(externalLinks.badgeIcon+selectedBadge.icon):(defaultImage)} className="badgeDetailModalIcon"/>
+                                <img src={(selectedBadge.icon!=="")?(externalLinks.badgeIcon+selectedBadge.icon):(defaultImage)} className="badgeDetailModalIcon"/>
                                 <h1 className="badgeDetailModalTitle">
                                     {selectedBadge.name}
                                 </h1>

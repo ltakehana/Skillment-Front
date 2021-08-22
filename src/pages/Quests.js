@@ -131,7 +131,7 @@ function Quests() {
 
 
         if(companyInfo.privilleges){
-            if(userInfo.admin || companyInfo.privilleges[4]=='1')
+            if(userInfo.admin || companyInfo.privilleges[4]==='1')
                 setAdmin(true);
             else
                 setAdmin(false);
@@ -177,7 +177,7 @@ function Quests() {
                                         </span>
                                     </div>
                                 )}
-                                <img src={(quest.icon!="" && quest.icon!=null)?(externalLinks.questIcon+quest.icon):(defaultImage)} onClick={()=>{setSelectedQuest(quest);setQuestDetailsVisible(true)}} className="questsCarouselItemIcon"/>
+                                <img src={(quest.icon!=="" && quest.icon!==null)?(externalLinks.questIcon+quest.icon):(defaultImage)} onClick={()=>{setSelectedQuest(quest);setQuestDetailsVisible(true)}} className="questsCarouselItemIcon"/>
                                 <h2 className="questsCarouselItemTitle">
                                     {quest.name}
                                 </h2>
@@ -198,7 +198,7 @@ function Quests() {
                <Modal onClose={()=>{setGiveQuestModal(false)}}>
                    <div className="giveModal">
                        <div className="giveModalHeader">                                
-                            <img src={(selectedQuest.icon!="" && selectedQuest.icon!=null)?(externalLinks.questIcon+selectedQuest.icon):(defaultImage)}/>
+                            <img src={(selectedQuest.icon!=="" && selectedQuest.icon!==null)?(externalLinks.questIcon+selectedQuest.icon):(defaultImage)}/>
                             <div className="giveModalTitle">
                                 <h1>Dar moeda - {selectedQuest.name}</h1>
                                 <div>
@@ -215,7 +215,7 @@ function Quests() {
                                            <input onChange={(e) => handlePlayerChecked(e.target.checked,player.id)} type="checkbox" className="playerCheckbox"/>
                                        </td>
                                        <td className="playerIconColumn">
-                                            <img style={{borderRadius:"40vw"}} src={(player.picture=="")?(playerIcon):(externalLinks.userPic+player.picture)} className="playerIcon"/>
+                                            <img style={{borderRadius:"40vw"}} src={(player.picture==="")?(playerIcon):(externalLinks.userPic+player.picture)} className="playerIcon"/>
                                        </td>
                                        <td className="playerNameColumn">
                                            <label className="playerName">{player.name}</label>
@@ -282,7 +282,7 @@ function Quests() {
                                             <input onChange={(e) => handlePlayerChecked(e.target.checked,player.id)} type="checkbox" className="playerCheckbox"/>
                                         </td>
                                        <td className="playerIconColumn">
-                                            <img style={{borderRadius:"40vw"}} src={(player.picture=="")?(playerIcon):(externalLinks.userPic+player.picture)} className="playerIcon"/>
+                                            <img style={{borderRadius:"40vw"}} src={(player.picture==="")?(playerIcon):(externalLinks.userPic+player.picture)} className="playerIcon"/>
                                        </td>
                                         <td className="playerNameColumn">
                                             <label className="playerName">{player.name}</label>
@@ -321,7 +321,7 @@ function Quests() {
                   <Modal onClose={()=>{setQuestDetailsVisible(false)}}>
                      <div className="questDetailModal">
                          <div className="questDetailModalHeader">                  
-                                <img className="questDetailModalIcon" src={(selectedQuest.icon!="" && selectedQuest.icon!=null)?(externalLinks.questIcon+selectedQuest.icon):(defaultImage)}/>
+                                <img className="questDetailModalIcon" src={(selectedQuest.icon!=="" && selectedQuest.icon!==null)?(externalLinks.questIcon+selectedQuest.icon):(defaultImage)}/>
                                 <div style={{width:"80%"}}>
                                     <h1 className="questDetailModalTitle">
                                         {selectedQuest.name}

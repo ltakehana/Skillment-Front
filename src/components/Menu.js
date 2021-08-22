@@ -76,7 +76,7 @@ function Menu({selectedMenu}) {
                 </span>
             </div>
             {menuItens.map((item,index)=>(
-                (selectedMenu!=index)&&(<div className="MenuIcon" onClick={()=>{goTo(item.link)}} title={item.description} style={{backgroundColor:backgroundColor}}>
+                (selectedMenu!==index)&&(<div className="MenuIcon" onClick={()=>{goTo(item.link)}} title={item.description} style={{backgroundColor:backgroundColor}}>
                     <span className="material-icons" title={item.description} style={{color:color}}>
                         {item.icon}
                     </span>

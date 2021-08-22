@@ -30,7 +30,7 @@ function Company({onClose}) {
         if(!companyInfo){
             companyInfo = await getCompany(token);
         }
-        if(companyInfo.logo!=""){
+        if(companyInfo.logo!==""){
             setCompanyPicture(externalLinks.companyLogo+companyInfo.logo);
         }
         setFieldName(companyInfo.name)
