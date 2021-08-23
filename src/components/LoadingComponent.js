@@ -14,7 +14,6 @@ const LoadingComponent = ({isOpen}) => {
             width="90px"
             height="90px"
           />
-          <div className="loadingText">Loading...</div>
         </section>
       )}
     </>

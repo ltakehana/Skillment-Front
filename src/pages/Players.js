@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Menu from "../components/Menu";
 import Navbar from "../components/Navbar";
+import ErrorModal from "../components/ErrorModal";
 import "../styles/pages/players.css";
 import { useHistory } from "react-router-dom";
 import getCompanyUsers from "../services/requests/getCompanyUsers";
@@ -12,7 +13,6 @@ import defaultImage from "../assets/accountCircle.svg";
 import editIcon from "../assets/editIcon.svg";
 import externalLinks from "../utils/externalLinks";
 
-import updateProfile from "../services/requests/updateProfile";
 import registerRequest from "../services/requests/registerRequest";
 import LoadingComponent from "../components/LoadingComponent";
 
@@ -26,6 +26,7 @@ function Players() {
 
   const [addPlayer, setAddPlayer] = useState(false);
   const [editPLayer, setEditPlayer] = useState(false);
+  const [isOnError, setIsOnError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const [playerEmailInput, setPlayerEmailInput] = useState("");
@@ -121,9 +122,10 @@ function Players() {
   };
 
   useEffect(async () => {
+    setIsLoading(true);
     const userToken = sessionStorage.getItem("userToken");
     if (!userToken) {
-      await history.push("/login");
+      history.push("/login");
     }
     let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
     if (!userInfo) {
@@ -148,6 +150,7 @@ function Players() {
       userInfo.selected_company
     );
     setPlayersList(companyUsers);
+    setIsLoading(false);
   }, []);
 
   return (
@@ -553,6 +556,8 @@ function Players() {
           </div>
         </Modal>
       )}
+
+      <ErrorModal isOpen={isOnError} onClose={() => setIsOnError(false)} />
     </div>
   );
 }
