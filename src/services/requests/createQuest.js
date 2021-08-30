@@ -12,7 +12,7 @@ const createQuest = async (token,quest) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

@@ -19,7 +19,7 @@ const createCoin = async (token,name,description,icon) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

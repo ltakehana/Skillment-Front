@@ -11,7 +11,7 @@ const getCompanyUsers = async (token,company_id) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

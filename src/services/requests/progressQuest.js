@@ -11,7 +11,7 @@ const progressQuest = async (token,body) => {
       });
       return response.data;
   } catch (error) {
-    return (error.response.data);
+    return false;
   }
 };
 

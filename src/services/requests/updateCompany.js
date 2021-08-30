@@ -11,7 +11,7 @@ const updateCompany = async (token,companyId,body) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

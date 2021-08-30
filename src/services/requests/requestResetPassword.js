@@ -6,7 +6,7 @@ const registerRequest = async (body) => {
     response = await api.post("/reset_password",body);
       return response.data.message;
   } catch (error) {
-    return (error.response.data);
+    return false;
   }
 };
 

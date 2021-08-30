@@ -3,14 +3,17 @@ import { useHistory } from 'react-router-dom';
 import Logo from "../assets/LogoUsbea.jpeg"
 import '../styles/pages/login.css';
 import auth from '../services/requests/auth';
+import LoadingComponent from '../components/LoadingComponent';
 
 
 const LoginYA21 = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSignIn = async () => {
+    setIsLoading(true);
     try {
       const response = await auth(email, password);
       if (response.result !== null) {
@@ -22,6 +25,7 @@ const LoginYA21 = () => {
     } catch (error) {
        console.error(error);
     }
+    setIsLoading(false);
   };
 
 
@@ -61,6 +65,7 @@ const LoginYA21 = () => {
           </button>
         </div>
       </section>
+      <LoadingComponent isOpen={isLoading} />
     </div>
   );
 };

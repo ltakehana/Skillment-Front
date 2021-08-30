@@ -11,7 +11,7 @@ const updateProfile = async (token,body) => {
       });
       return response.data.message;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

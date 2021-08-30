@@ -12,7 +12,7 @@ const getCompany = async (token) => {
       sessionStorage.setItem('companyInfo', JSON.stringify(response.data));
       return response.data;
   } catch (error) {
-    return (error);
+    return false;
   }
 };
 

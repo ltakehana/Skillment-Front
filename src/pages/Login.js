@@ -3,14 +3,17 @@ import { useHistory } from 'react-router-dom';
 import Logo from "../assets/Marca_Negativo_Cor2.png"
 import '../styles/pages/login.css';
 import auth from '../services/requests/auth';
+import LoadingComponent from '../components/LoadingComponent';
 
 
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSignIn = async () => {
+    setIsLoading(true);
     try {
       const response = await auth(email, password);
       if (response.token) {
@@ -20,14 +23,15 @@ const Login = () => {
       }
     } catch (error) {
       alert("Email ou senha incorretos, por favor tente novamente!");
-       console.error(error);
+      console.error(error);
     }
+    setIsLoading(false);
   };
 
 
   return (
     <div className="login-container">
-      <section className="panel" style={{background:"white"}}>
+      <section className="panel" style={{ background: "white" }}>
         <img className="logo" src={Logo} alt="Logo" />
       </section>
       <section className="login-form-container">
@@ -51,7 +55,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <h4 className="login-password" style={{cursor:"pointer"}} onClick={()=>{history.push("/reset_password")}}>Esqueceu sua senha?</h4>
+          <h4 className="login-password" style={{ cursor: "pointer" }} onClick={() => { history.push("/reset_password") }}>Esqueceu sua senha?</h4>
           <button
             className="login-button"
             type="button"
@@ -61,6 +65,7 @@ const Login = () => {
           </button>
         </div>
       </section>
+      <LoadingComponent isOpen={isLoading} />
     </div>
   );
 };
