@@ -7,12 +7,15 @@ import Modal from './Modal';
 const ErrorModal = ({ isOpen, onClose }) => {
     return (
         isOpen && (
-            <Modal onClose={onClose}>
+            <Modal onClose={() => {
+                onClose()
+                window.location.reload()
+                }}>
                 <div className='errorModalContainer'>
                     <img
                         className='modalImage'
                         src={errorImage}
-                        alt="error image"
+                        alt="error"
                     />
                     <div className='errorModalTitle'>
                         Ops... Ocorreu um problema!
@@ -24,7 +27,10 @@ const ErrorModal = ({ isOpen, onClose }) => {
 
                     <button
                         className='errorModalButton'
-                        onClick={() => window.location.reload()}
+                        onClick={() => {
+                            onClose()
+                            window.location.reload()
+                        }}
                     >
                         Recarregar
                     </button>

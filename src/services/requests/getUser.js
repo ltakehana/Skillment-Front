@@ -12,7 +12,7 @@ const getUser = async (token) => {
       sessionStorage.setItem('userInfo', JSON.stringify(response.data));
       return response.data;
   } catch (error) {
-    return (error);
+    return false;
   }
 };
 

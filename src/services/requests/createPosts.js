@@ -16,7 +16,7 @@ const createPosts = async (token,userId,message) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

@@ -11,7 +11,7 @@ const getBadges = async (token) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false;
   }
 };
 

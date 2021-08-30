@@ -17,6 +17,7 @@ import playerIcon from "../assets/accountCircle.svg";
 import fileToBase64 from '../utils/fileToBase64';
 import externalLinks from '../utils/externalLinks';
 import completeBadge from '../services/requests/completeBadge';
+import ErrorModal from '../components/ErrorModal';
 
 
 function Badges() {
@@ -35,6 +36,7 @@ function Badges() {
     const [playersIdList, setPlayersIdList] = useState([]);
     const [giveBadgeModal, setGiveBadgeModal] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [isOnError, setIsOnError] = useState(false);
 
     const [fieldImage, setFieldImage] = useState(defaultImage);
 
@@ -60,7 +62,9 @@ function Badges() {
             users_id: playersIdList
         }
 
-        await completeBadge(userToken, body);
+        const res = await completeBadge(userToken, body);
+        if (!res)
+            setIsOnError(true);
         setGiveBadgeModal(false);
         setIsLoading(false);
         window.location.reload();
@@ -87,7 +91,10 @@ function Badges() {
         await createBadge(userToken, badgeNameInput, badgeDescriptionInput, fieldImage);
         setCreateBadgeModal(false);
         const badges = await getBadges(userToken);
-        setBadges(badges);
+        if (!badges)
+            setIsOnError(true);
+        else
+            setBadges(badges);
         setIsLoading(false);
     }
 
@@ -100,10 +107,14 @@ function Badges() {
         let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
         if (!userInfo) {
             userInfo = await getUser(userToken);
+            if (!userInfo)
+                setIsOnError(true);
         }
         let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
         if (!companyInfo) {
             companyInfo = await getCompany(userToken);
+            if (!companyInfo)
+                setIsOnError(true);
         }
         setBackgroundColor(companyInfo.second_color);
         setHighlightColor(companyInfo.first_color);
@@ -116,10 +127,16 @@ function Badges() {
         }
 
         const companyUsers = await getCompanyUsers(userToken, userInfo.selected_company);
-        setPlayersList(companyUsers);
+        if (!companyUsers)
+            setIsOnError(true);
+        else
+            setPlayersList(companyUsers);
 
         const badges = await getBadges(userToken);
-        setBadges(badges);
+        if (!badges)
+            setIsOnError(true);
+        else
+            setBadges(badges);
         setIsLoading(false);
     }, []);
 
@@ -268,7 +285,8 @@ function Badges() {
                     </Modal>
                 )}
                 <Navbar></Navbar>
-            <LoadingComponent isOpen={isLoading} />
+                <LoadingComponent isOpen={isLoading} />
+                <ErrorModal isOpen={isOnError} onClose={() => setIsOnError(false)}/>
             </div>
         </>
     );

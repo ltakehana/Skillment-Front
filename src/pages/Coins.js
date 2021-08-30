@@ -18,6 +18,7 @@ import fileToBase64 from '../utils/fileToBase64';
 import externalLinks from '../utils/externalLinks'
 import addCoins from '../services/requests/addCoins';
 import LoadingComponent from '../components/LoadingComponent';
+import ErrorModal from '../components/ErrorModal';
 
 
 function Coins() {
@@ -37,6 +38,7 @@ function Coins() {
     const [giveCoinsModal, setGiveCoinsModal] = useState(false);
     const [selectedCoin, setSelectedCoin] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const [isOnError, setIsOnError] = useState(false);
 
     const [fieldImage, setFieldImage] = useState(defaultImage);
 
@@ -86,9 +88,15 @@ function Coins() {
             history.push("/login")
         }
         await createCoin(userToken, coinNameInput, coinDescriptionInput, fieldImage);
-        setCreateCoinModal(false);
+        if (!createCoin)
+            setIsOnError(true);
+        else
+            setCreateCoinModal(false);
         const coins = await getCoins(userToken);
-        setCoins(coins);
+        if (!coins)
+            setIsOnError(true);
+        else
+            setCoins(coins);
         setIsLoading(false);
     }
 
@@ -102,10 +110,14 @@ function Coins() {
         let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
         if (!userInfo) {
             userInfo = await getUser(userToken);
+            if (!userInfo)
+                setIsOnError(true);
         }
         let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
         if (!companyInfo) {
             companyInfo = await getCompany(userToken);
+            if (!companyInfo)
+                setIsOnError(true);
         }
         setBackgroundColor(companyInfo.second_color);
         setHighlightColor(companyInfo.first_color);
@@ -119,10 +131,16 @@ function Coins() {
         }
 
         const companyUsers = await getCompanyUsers(userToken, userInfo.selected_company);
-        setPlayersList(companyUsers);
+        if (!companyUsers)
+            setIsOnError(true);
+        else
+            setPlayersList(companyUsers);
 
         const coins = await getCoins(userToken);
-        setCoins(coins);
+        if (!coins)
+            setIsOnError(true);
+        else
+            setCoins(coins);
         setIsLoading(false);
     }, []);
 
@@ -269,6 +287,7 @@ function Coins() {
             )}
             <Navbar></Navbar>
             <LoadingComponent isOpen={isLoading} />
+            <ErrorModal isOpen={isOnError} onClose={() => setIsOnError(false)}/>
         </div>
     );
 

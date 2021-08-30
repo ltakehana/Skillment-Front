@@ -8,6 +8,7 @@ import getCompany from '../services/requests/getCompany';
 import defaultImage from "../assets/coinIcon.svg";
 import externalLinks from '../utils/externalLinks';
 import LoadingComponent from '../components/LoadingComponent';
+import ErrorModal from '../components/ErrorModal';
 
 function Coin(props) {
 
@@ -18,6 +19,7 @@ function Coin(props) {
     const [coins, setCoins] = useState([]);
     const [coinSelected, setCoinSelected] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [isOnError, setIsOnError] = useState(false);
     const [backgroundColor, setBackgroundColor] = useState("#C7C7C7");
 
     useEffect(async () => {
@@ -29,11 +31,18 @@ function Coin(props) {
         let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
         if (!companyInfo) {
             companyInfo = await getCompany(userToken);
+            if (!companyInfo)
+                setIsOnError(true);
         }
         setBackgroundColor(companyInfo.second_color);
+        console.log('dasjlkdjsakl')
         const coins = await getCoin(userToken, coinId);
-        setCoins(coins);
-        setCoinSelected(coins.point_register);
+        if (!coins)
+            setIsOnError(true);
+        else {
+            setCoins(coins);
+            setCoinSelected(coins.point_register);
+        }
         setIsLoading(false);
     }, []);
 
@@ -80,6 +89,7 @@ function Coin(props) {
             </div>
             <Navbar></Navbar>
             <LoadingComponent isOpen={isLoading} />
+            <ErrorModal isOpen={isOnError} onClose={() => setIsOnError(false)} />
         </div>
     );
 

@@ -11,7 +11,7 @@ const getCoin = async (token,coinId) => {
       });
       return response.data;
   } catch (error) {
-    return ([]);
+    return false; 
   }
 };
 

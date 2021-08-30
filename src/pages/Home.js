@@ -14,6 +14,7 @@ import Modal from '../components/Modal';
 import defaultImage from "../assets/accountCircle.svg";
 import externalLinks from '../utils/externalLinks';
 import LoadingComponent from '../components/LoadingComponent';
+import ErrorModal from '../components/ErrorModal';
 
 
 function Home() {
@@ -27,6 +28,7 @@ function Home() {
     const [postModalVisible, setPostModalVisible] = useState(false);
     const [postMessageInput, setPostMessageInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isOnError, setIsOnError] = useState(false);
 
     const [player, setRankingPlayer] = useState({
         name: "Usuario do app",
@@ -47,13 +49,17 @@ function Home() {
         let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
         if (!userInfo) {
             userInfo = await getUser(userToken);
-
+            if (!userInfo)
+                setIsOnError(true);
         }
 
         await createPosts(userToken, userInfo.id, postMessageInput);
 
         const posts = await getPosts(userToken);
-        setPosts(posts);
+        if (!posts)
+            setIsOnError(true);
+        else
+            setPosts(posts);
 
         setPostModalVisible(false)
         setIsLoading(false);
@@ -68,11 +74,15 @@ function Home() {
         let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
         if (!userInfo) {
             userInfo = await getUser(userToken);
+            if (!userInfo)
+                setIsOnError(true);
         }
         setUserPicture(userInfo.picture);
         let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
         if (!companyInfo) {
             companyInfo = await getCompany(userToken);
+            if (!companyInfo)
+                setIsOnError(true);
         }
         setBackgroundColor(companyInfo.second_color);
         setHighlightColor(companyInfo.first_color);
@@ -85,7 +95,10 @@ function Home() {
         });
 
         const posts = await getPosts(userToken);
-        setPosts(posts);
+        if (!posts)
+            setIsOnError(true);
+        else
+            setPosts(posts);
         setIsLoading(false);
     }, []);
 

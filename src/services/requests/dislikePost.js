@@ -11,7 +11,7 @@ const dislikePost = async (token,postId) => {
       });
       return response.data;
   } catch (error) {
-    return (error.response.data);
+    return false;
   }
 };
 

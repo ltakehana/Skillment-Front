@@ -14,12 +14,14 @@ import editIcon from "../assets/editIcon.svg";
 import externalLinks from "../utils/externalLinks";
 
 import registerRequest from "../services/requests/registerRequest";
+import updateUserCompany from "../services/requests/updateUserCompany";
 import LoadingComponent from "../components/LoadingComponent";
 
 function Players() {
   const history = useHistory();
 
   const [playersList, setPlayersList] = useState([]);
+  const [userId, setUserId] = useState('');
 
   const [backgroundColor, setBackgroundColor] = useState("#C7C7C7");
   const [highlightColor, setHighlightColor] = useState("#C7C7C7");
@@ -39,42 +41,43 @@ function Players() {
   const [privilleges, setPrivilleges] = useState("0000000000");
 
   const handleRegisterRequest = async () => {
-      try {
-        setIsLoading(true);
-        const userToken = sessionStorage.getItem("userToken");
-        if (!userToken) {
-          history.push("/login");
-        }
-    
-        let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
-        if (!companyInfo) {
-          companyInfo = await getCompany(userToken);
-        }
-    
-        let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
-        if (!userInfo) {
-          userInfo = await getUser(userToken);
-        }
-    
-        const body = {
-          email: playerEmailInput,
-          office: playerOfficeInput,
-          author_id: userInfo.id,
-          privileges: privilegesField,
-          company: companyInfo.name,
-        };
-    
-        await registerRequest(userToken, body);
-        setAddPlayer(false);
-        setIsLoading(false);
-        window.location.reload();
-      } catch (error) {
-          console.log(error);
+    try {
+      setIsLoading(true);
+      const userToken = sessionStorage.getItem("userToken");
+      if (!userToken) {
+        history.push("/login");
       }
+
+      let companyInfo = JSON.parse(sessionStorage.getItem("companyInfo"));
+      if (!companyInfo) {
+        companyInfo = await getCompany(userToken);
+      }
+
+      let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+      if (!userInfo) {
+        userInfo = await getUser(userToken);
+      }
+
+      const body = {
+        email: playerEmailInput,
+        office: playerOfficeInput,
+        author_id: userInfo.id,
+        privileges: privilegesField,
+        company: companyInfo.name,
+      };
+
+      await registerRequest(userToken, body);
+      setAddPlayer(false);
+      setIsLoading(false);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleEditRequest = async () => {
     try {
+      setIsLoading(true);
       const userToken = sessionStorage.getItem("userToken");
       if (!userToken) {
         history.push("/login");
@@ -97,9 +100,16 @@ function Players() {
         company: companyInfo.name,
       };
 
-      console.log("Adicionar requisição");
-      //   await updateProfile(userToken, body);
-      setEditPlayer(false);
+      const editUser = await updateUserCompany(companyInfo.id, userId, body, userToken);
+      if (!editUser) {
+        setEditPlayer(false);
+        setIsLoading(false);
+        setIsOnError(true);
+      } else {
+        setEditPlayer(false);
+        setIsLoading(false);
+        window.location.reload();
+      }
     } catch (error) {
       console.log(error);
     }
@@ -176,6 +186,7 @@ function Players() {
                             : externalLinks.userPic + player.picture
                         }
                         className="playerIcon"
+                        alt='playericon'
                       />
                     </td>
                     <td className="playerNameColumn">
@@ -220,7 +231,10 @@ function Players() {
                               </span>
                             </div>
                             <div
-                              onClick={() => setEditPlayer(true)}
+                              onClick={() => {
+                                setEditPlayer(true)
+                                setUserId(player.id);
+                              }}
                               className="NavbarUserDropdownItem"
                             >
                               <span className="material-icons NavbarUserDropdownIcon">
