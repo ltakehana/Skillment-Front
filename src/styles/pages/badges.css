@@ -38,6 +38,11 @@
     font-family: Roboto;
     color: #363636;
     margin:2vh;
+    margin-left: 2rem;
+}
+
+.createBadgeModalTextIcon {
+    margin-left: 1rem;
 }
 
 .createBadgeModalSubText {
